@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sae.PageAcceuil">
+    <children>
+        <VBox prefHeight="84.0" prefWidth="168.0" style="-fx-border-color: #000000;">
+            <children>
+                <ImageView fitHeight="61.0" fitWidth="77.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@img/Capture%20du%202023-06-07%2016-25-20_transparent.png" />
+                    </image>
+                    <VBox.margin>
+                        <Insets top="10.0" />
+                    </VBox.margin>
+                </ImageView>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Host &amp; Guest Organizer" textAlignment="CENTER" wrappingWidth="87.9951171875">
+                    <VBox.margin>
+                        <Insets left="75.0" top="-40.0" />
+                    </VBox.margin>
+                </Text>
+            </children>
+        </VBox>
+        <VBox layoutX="168.0" prefHeight="84.0" prefWidth="433.0" style="-fx-border-color: #000000;">
+            <children>
+                <ImageView fitHeight="48.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@img/Capture%20du%202023-05-25%2010-00-25.png" />
+                    </image>
+                    <VBox.margin>
+                        <Insets left="110.0" top="3.0" />
+                    </VBox.margin>
+                </ImageView>
+                <ImageView fitHeight="48.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@img/imprt_transparent.png" />
+                    </image>
+                    <VBox.margin>
+                        <Insets left="280.0" top="-50.0" />
+                    </VBox.margin>
+                </ImageView>
+            <Button mnemonicParsing="false" style="-fx-background-color: #ffffff; -fx-border-color: #000000;" text="Affectation">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="95.0" />
+               </VBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" style="-fx-background-color: #ffffff; -fx-border-color: #000000;" text="Importer" onAction="#importCSV">
+               <VBox.margin>
+                  <Insets bottom="-5.0" left="272.0" top="-35.0" />
+               </VBox.margin>
+            </Button>
+            </children>
+        </VBox>
+        <VBox layoutY="84.0" prefHeight="67.0" prefWidth="168.0" style="-fx-border-color: #000000;">
+            <children>
+                <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@img/pond_transparent.png" />
+                    </image>
+                    <VBox.margin>
+                        <Insets left="10.0" top="5.0" />
+                    </VBox.margin>
+                </ImageView>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pondération" textAlignment="CENTER" wrappingWidth="87.9951171875">
+                    <VBox.margin>
+                        <Insets left="70.0" top="-30.0" />
+                    </VBox.margin>
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Text>
+            </children>
+        </VBox>
+        <HBox layoutY="150.0" prefHeight="251.0" prefWidth="168.0" style="-fx-border-color: #000000;">
+            <children>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="1.">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                    <HBox.margin>
+                        <Insets left="11.0" top="10.0" />
+                    </HBox.margin>
+                </Text>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="2.">
+                    <HBox.margin>
+                        <Insets left="-20.0" top="40.0" />
+                    </HBox.margin>
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Text>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="3.">
+                    <HBox.margin>
+                        <Insets left="-20.0" top="70.0" />
+                    </HBox.margin>
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Text>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="4.">
+                    <HBox.margin>
+                        <Insets left="-20.0" top="100.0" />
+                    </HBox.margin>
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Text>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="5.">
+                    <HBox.margin>
+                        <Insets left="-20.0" top="130.0" />
+                    </HBox.margin>
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Text>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="6.">
+                    <HBox.margin>
+                        <Insets left="-20.0" top="160.0" />
+                    </HBox.margin>
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Text>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="7.">
+                    <HBox.margin>
+                        <Insets left="-20.0" top="190.0" />
+                    </HBox.margin>
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Text>
+                <ChoiceBox fx:id="martialStatusBox1" prefHeight="11.0" prefWidth="106.0">
+                    <HBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                    </HBox.margin>
+                </ChoiceBox>
+                <ChoiceBox fx:id="martialStatusBox2" prefHeight="26.0" prefWidth="111.0">
+                    <HBox.margin>
+                        <Insets left="-110.0" top="70.0" />
+                    </HBox.margin>
+                </ChoiceBox>
+                <ChoiceBox fx:id="martialStatusBox3" prefHeight="26.0" prefWidth="107.0">
+                    <HBox.margin>
+                        <Insets left="-108.0" top="40.0" />
+                    </HBox.margin>
+                </ChoiceBox>
+                <ChoiceBox fx:id="martialStatusBox4" prefHeight="26.0" prefWidth="112.0">
+                    <HBox.margin>
+                        <Insets left="-110.0" top="100.0" />
+                    </HBox.margin>
+                </ChoiceBox>
+                <ChoiceBox fx:id="martialStatusBox5" prefHeight="26.0" prefWidth="110.0">
+                    <HBox.margin>
+                        <Insets left="-110.0" top="130.0" />
+                    </HBox.margin>
+                </ChoiceBox>
+                <ChoiceBox fx:id="martialStatusBox6" prefHeight="26.0" prefWidth="109.0">
+                    <HBox.margin>
+                        <Insets left="-110.0" top="160.0" />
+                    </HBox.margin>
+                </ChoiceBox>
+                <ChoiceBox fx:id="martialStatusBox7" prefHeight="26.0" prefWidth="110.0">
+                    <HBox.margin>
+                        <Insets left="-110.0" top="190.0" />
+                    </HBox.margin>
+                </ChoiceBox>
+            </children>
+        </HBox>
+      <TableView layoutX="214.0" layoutY="118.0" prefHeight="251.0" prefWidth="271.0" fx:id="tableView">
+        <columns>
+          <TableColumn prefWidth="129.0" text="HOST" fx:id="column1"/>
+          <TableColumn minWidth="0.0" prefWidth="141.0" text="GUEST" fx:id="column2"/>
+        </columns>
+      </TableView>
+    </children>
+</AnchorPane>

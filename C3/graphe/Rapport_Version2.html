@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Rapport S2.03 Version 2</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Rapport S2.03 Version 2</h1>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#sae-s2.02-rapport-pour-la-ressource-graphes"><span class="toc-section-number">1</span> SAE S2.02 – Rapport pour la ressource Graphes</a>
+<ul>
+<li><a href="#version-1"><span class="toc-section-number">1.1</span> Version 1</a>
+<ul>
+<li><a href="#étude-dun-premier-exemple"><span class="toc-section-number">1.1.1</span> Étude d’un premier exemple</a></li>
+<li><a href="#modélisation-de-lexemple"><span class="toc-section-number">1.1.2</span> Modélisation de l’exemple</a></li>
+<li><a href="#modélisation-pour-la-version-1"><span class="toc-section-number">1.1.3</span> Modélisation pour la Version 1</a></li>
+<li><a href="#implémentation-de-la-version-1"><span class="toc-section-number">1.1.4</span> Implémentation de la Version 1</a></li>
+</ul></li>
+<li><a href="#version-2"><span class="toc-section-number">1.2</span> Version 2</a>
+<ul>
+<li><a href="#exemple-minimal-pour-la-gestion-de-lhistorique"><span class="toc-section-number">1.2.1</span> Exemple minimal pour la gestion de l’historique</a></li>
+<li><a href="#deuxième-exemple-pour-la-gestion-dhistorique"><span class="toc-section-number">1.2.2</span> Deuxième exemple pour la gestion d’historique</a></li>
+<li><a href="#modélisation-pour-les-exemples"><span class="toc-section-number">1.2.3</span> Modélisation pour les exemples</a></li>
+<li><a href="#modélisation-pour-lhistorique-de-la-version-2"><span class="toc-section-number">1.2.4</span> Modélisation pour l’historique de la Version 2</a></li>
+<li><a href="#implémentation-de-lhistorique-de-la-version-2"><span class="toc-section-number">1.2.5</span> Implémentation de l’historique de la Version 2</a></li>
+<li><a href="#test-pour-lhistorique-de-la-version-2"><span class="toc-section-number">1.2.6</span> Test pour l’historique de la Version 2</a></li>
+<li><a href="#prendre-en-compte-les-autres-préférences"><span class="toc-section-number">1.2.7</span> Prendre en compte les autres préférences</a></li>
+<li><a href="#lincompatibilité-en-tant-que-malus"><span class="toc-section-number">1.2.8</span> L’incompatibilité en tant que malus</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+<h1 data-number="1" id="sae-s2.02-rapport-pour-la-ressource-graphes"><span class="header-section-number">1</span> SAE S2.02 – Rapport pour la ressource Graphes</h1>
+<p><em>CANCEL Paul, KELLER Arthur et SOULIEZ Gaspard</em></p>
+<h2 data-number="1.1" id="version-1"><span class="header-section-number">1.1</span> Version 1</h2>
+<h3 data-number="1.1.1" id="étude-dun-premier-exemple"><span class="header-section-number">1.1.1</span> Étude d’un premier exemple</h3>
+<p>Les appariemets acceptables pour les données de l’exemple 1 :</p>
+<ul>
+<li>Adonia, A – Xolag, X</li>
+<li>Adonia, A – Zander, Z</li>
+<li>Adonia, A – Yak, K</li>
+<li>Bellatrix, B – Xolag, X</li>
+<li>Bellatrix, B – Zander, Z</li>
+<li>Callista, C – Xolag, X</li>
+<li>Callista, C – Yak, Y</li>
+<li>Callista, C – Zander, Z</li>
+</ul>
+<p>Expliquer l’apparaiment optimal est Bellatrix–Xolag, Adonia–Zander, et Callista–Yak. Pas en parlant du graphe mais en parlant des problemes (hobbies, animaux …).</p>
+<p>Pour commencer nous allons regarder le cas de Bellatrix car elle est allergique aux animaux donc elle ne peut pas être avec Yak car il a un animal. Ses hobbies sont la culture et la science. Le seul hôte qui convient est donc Xollag car il n’a pas d’animaux et a comme hobbies la culture. Ensuite pour le cas de Adonia qui n’est pas allergique au animaux et qui a comme hobbies le sports et la technologie et il reste Zander et Yak comme hôte. Celui qui convient le mieux est Zander car il a comme hobbies la technologie. Pour finir Callista et Yak vont ensemble et ca tombe bien car ils ont leur deux hobbies en commun qui sont la science et la lecture.</p>
+<h3 data-number="1.1.2" id="modélisation-de-lexemple"><span class="header-section-number">1.1.2</span> Modélisation de l’exemple</h3>
+<p>Image du graphe plus explicaction des branches</p>
+<p>Dans l’exemple ci-dessus : - Les poids qui ont 100 veulent dire que les adolescents ont 0 de loisirs en commun. - le poids des arrétes qui sont à 101 signifient que les adolescents ont 1 loisir de commun. - le poids des arrétes qui sont à 102 signifient que les adolescents ont 2 loisir de commun. - Les poids qui sont à moins de 100 signifient qu’il y a une incompatibilité entre les adolescents.</p>
+<figure>
+<img src="./img/graphe%20sae.png" alt="" /><figcaption>Modélisation du graphe</figcaption>
+</figure>
+<figure>
+<img src="./img/matrice.png" alt="" /><figcaption>Modélisation de la matrice</figcaption>
+</figure>
+<h3 data-number="1.1.3" id="modélisation-pour-la-version-1"><span class="header-section-number">1.1.3</span> Modélisation pour la Version 1</h3>
+<p>Nous avons decider de mettre un poids de depart entre chaque adolescents de 0. On ajoute un poids de 100 quuand il y a une compatibilité. En ce qui concerne les activités en commun nous ajoutons un poids de 1 pour une activité en commun entre chaque adolescent.</p>
+<h3 data-number="1.1.4" id="implémentation-de-la-version-1"><span class="header-section-number">1.1.4</span> Implémentation de la Version 1</h3>
+<p>(voir <a href="../src/Graphe/AffectationUtil.java">AffectationUtil.java</a>)</p>
+<p>(voir <a href="../test/App/AffectationUtilTest.java">AffectationUtilTest.java</a>)</p>
+<h2 data-number="1.2" id="version-2"><span class="header-section-number">1.2</span> Version 2</h2>
+<h3 data-number="1.2.1" id="exemple-minimal-pour-la-gestion-de-lhistorique"><span class="header-section-number">1.2.1</span> Exemple minimal pour la gestion de l’historique</h3>
+<p>Exemple :</p>
+<ul>
+<li><p>Albert, A – Yakari, Y</p></li>
+<li><p>Chloe, C – Zoe, Z</p></li>
+<li><p>Bertrand, B – Xavier, X</p></li>
+<li><p>Daniel, D – Wallyde, W</p></li>
+<li><p>Albert = “same” | Yakari = “same”</p></li>
+<li><p>Chloe = “other” | Zoe = “other”</p></li>
+<li><p>Bertrand = "" | Xavier = “other”</p></li>
+<li><p>Daniel = “same” | Wallyde = ""</p></li>
+</ul>
+<p>“same” = ne veut pas changer de correspondant</p>
+<p>“other” = veut changer de correspondant</p>
+<p>"" = n’a pas spécifier.</p>
+<p>L’appariement optimal qui prend en compte les données d’historique est le suivant :</p>
+<ul>
+<li>Albert, A – Yakari, Y</li>
+<li>Bertrand, B – Zoe, Z</li>
+<li>Chloe, C – Xavier, X</li>
+<li>Daniel, D – Wallyde, W</li>
+</ul>
+<p>L’appariement optimal est celui décrit ci-dessus, car il respecte au maximum les demandes de chaque personne. Albert et Yakari ont spécifié qu’ils souhaitaient rester ensemble, nous les avons donc regroupés. Chloe a spécifié “other”, nous avons donc changé son correspondant et l’avons associée à Xavier, qui a également spécifié “other” et a donc également changé de correspondant. Pour Zoe, qui a spécifié “other” et ne souhaitait pas être à nouveau avec Chloe, nous l’avons associée à Bertrand, qui n’avait pas de préférence spécifique. Enfin, nous avons Daniel, qui a spécifié “same” et était initialement avec Wallyde, qui n’a pas de demande spécifique.</p>
+<h3 data-number="1.2.2" id="deuxième-exemple-pour-la-gestion-dhistorique"><span class="header-section-number">1.2.2</span> Deuxième exemple pour la gestion d’historique</h3>
+<ul>
+<li>Albert “same” “sports,technology”</li>
+<li>Bertrand "" “culture,science”</li>
+<li>Chloe “other” “science,reading”</li>
+<li>Daniel “same” “technology”</li>
+<li>Wallyde "" “culture, technology”</li>
+<li>Xavier “other” “science, reading”</li>
+<li>Yakari “same” “sport”</li>
+<li>Zoe “other” “culture, reading”</li>
+</ul>
+<p>Nous avons pris en compte les hobbies de chaque personne, en plus de l’historique des appariements, dans le processus d’affectation. Cependant, malgré l’ajout des hobbies, les affectations ne changent pas car l’historique reste le critère principal pris en compte. Les hobbies ont été considérés comme un facteur supplémentaire dans la gestion des appariements, mais ils n’ont pas eu d’impact sur les affectations finales.</p>
+<ul>
+<li>Albert, A – Yakari, Y</li>
+<li>Bertrand, B – Zoe, Z</li>
+<li>Chloe, C – Xavier, X</li>
+<li>Daniel, D – Wallyde, W</li>
+</ul>
+<p>Ci-dessus l’affectations optimal en prenant en compte l’historique et les hobbies.</p>
+<h3 data-number="1.2.3" id="modélisation-pour-les-exemples"><span class="header-section-number">1.2.3</span> Modélisation pour les exemples</h3>
+<figure>
+<img src="./img/graphe%20sae(1).png" alt="" /><figcaption>Graphe avec historique</figcaption>
+</figure>
+<figure>
+<img src="./img/graphe%20sae(2).png" alt="" /><figcaption>Graphe avec historique + hobbies</figcaption>
+</figure>
+<h3 data-number="1.2.4" id="modélisation-pour-lhistorique-de-la-version-2"><span class="header-section-number">1.2.4</span> Modélisation pour l’historique de la Version 2</h3>
+<p>Nous avons décidé d’attribuer un poids initial de 0 entre chaque adolescent. Si les adolescents ne sont pas compatibles, nous ajoutons un poids de 100, tandis que s’ils sont compatibles, nous laissons le poids à 0. En ce qui concerne les hobbies, nous ajoutons un poids de -1 pour chaque hobby en commun.</p>
+<p>Voici comment cela se reflète sur le graphe :</p>
+<ul>
+<li>Un poids de 100 indique qu’ils ne sont pas compatibles (non respect du critère d’historique).</li>
+<li>Un poids de -1 indique qu’ils sont compatibles (respect du critère d’historique) et qu’ils ont un hobby en commun.</li>
+<li>Un poids de -2 indique qu’ils sont compatibles (respect du critère d’historique) et qu’ils ont deux hobbies en commun.</li>
+</ul>
+<h3 data-number="1.2.5" id="implémentation-de-lhistorique-de-la-version-2"><span class="header-section-number">1.2.5</span> Implémentation de l’historique de la Version 2</h3>
+<p>Pour prendre en compte le critère d’historique, nous avons ajouté la méthode <strong>weightHistory</strong> à la classe <a href="../src/Graphe/AffectationUtil.java">AffectationUtil.java</a>. Cette méthode nous permet de gérer le graphe en intégrant le critère d’historique.</p>
+<p>De plus, nous avons ajouté un paramètre nommé <strong>WEIGHT_HISTORY</strong> à la classe <a href="../src/Graphe/AffectationUtil.java">AffectationUtil.java</a> afin de contrôler les poids de la méthode <strong>weightHistory</strong>.</p>
+<h3 data-number="1.2.6" id="test-pour-lhistorique-de-la-version-2"><span class="header-section-number">1.2.6</span> Test pour l’historique de la Version 2</h3>
+<p>(voir <a href="../test/App/AffectationUtilTest.java">AffectationUtilTest.java</a>)</p>
+<h3 data-number="1.2.7" id="prendre-en-compte-les-autres-préférences"><span class="header-section-number">1.2.7</span> Prendre en compte les autres préférences</h3>
+<p><em>Pour chacun des autres critères d’affinité que vous décidez de prendre en compte, décrire comment vous changez la fonction weight de la classe AffectationUtil.</em></p>
+<p>(voir <a href="../src/Graphe/AffectationUtil.java">AffectationUtil.java</a>)</p>
+<h3 data-number="1.2.8" id="lincompatibilité-en-tant-que-malus"><span class="header-section-number">1.2.8</span> L’incompatibilité en tant que malus</h3>
+</body>
+</html>
